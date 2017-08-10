@@ -1,0 +1,14 @@
+language: c
+
+before_install:
+- sudo apt-get -qq update
+- sudo apt-get install git-core gnupg flex bison gperf build-essential gcc-multilib g++-multilib
+
+before_script:
+- git clone "https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" "$HOME/android_prebuilt_toolchains"
+
+script:
+- export ARCH=arm
+- export CROSS_COMPILE="$HOME/android_prebuilt_toolchains/bin/arm-linux-androidkernel-"
+- make lineageos_cancro_defconfig
+- make -j4
