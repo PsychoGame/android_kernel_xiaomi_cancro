@@ -40,7 +40,7 @@
 #include <linux/platform_device.h>
 #include <asm/uaccess.h>
 #include <asm/atomic.h>
-#include <tspdrv.h>
+#include "tspdrv.h"
 
 #define IMMVIBESPI_MULTIPARAM_SUPPORT
 
